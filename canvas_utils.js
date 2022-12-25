@@ -3,6 +3,7 @@
  
 var room_images = [];
 var hall_images = [];
+const doorAudio = new Audio(src = "audio/219486__jarredgibb__door-cupboard-06.mp3");
 
 const fetchAllImages = async ()=>{
   hall_images =  await getImages("http://farragofiction.com/99RoomsSim/images/Hallways/");
@@ -87,6 +88,7 @@ const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
 }
 
 const newPicture = (canvas)=>{
+  message("When is a door not a door?")
   console.log("JR NOTE: need a new image");
   if(Math.random()<0.75){
     newHallway(canvas);
@@ -113,6 +115,7 @@ const handleClickEvents = (canvas,virtual_canvas,most_frequent_color)=>{
 
     //ctx.fillRect(x, y, 5, 5); //this lets me debug where it thinks the pointer is
     if(isThisPixelRelevant(x,y,virtual_canvas, most_frequent_color)){
+      doorAudio.play();
       newPicture(canvas);
     }
   }

@@ -1,0 +1,1 @@
+//when done, want to use this to have specifics things for specific images
