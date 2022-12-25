@@ -37,7 +37,49 @@ const understandImage = (canvas)=>{
   let virtual_canvas =  makeVirtualCopyOfCanvas(canvas);
   edge_detection(virtual_canvas);
   const most_frequent_color = threshold(virtual_canvas,100);
+   //threshold(canvas,100);
+
   message("Most Frequent color is "+most_frequent_color);
+  handleClickEvents(canvas,virtual_canvas,most_frequent_color);
+  handleMouseMoveEvents(canvas,virtual_canvas,most_frequent_color);
+}
+
+
+
+const isThisPixelRelevant = (x,y,virtual_canvas,most_frequent_color)=>{
+  var ctx = virtual_canvas.getContext('2d');
+
+  var data = ctx.getImageData(x, y, 1,1);
+
+
+  if(data.data[0] === most_frequent_color){
+    return false;
+  }else{
+    return true;
+  }
+}
+
+const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
+  console.log("JR NOTE: handling mouse move events")
+  canvas.onmousemove = (e)=>{
+    var ctx = canvas.getContext('2d');
+
+    const rect = canvas.getBoundingClientRect();
+    const transformedCursorPosition = {x: e.offsetX+rect.x/2, y:e.offsetY+rect.y}
+    const {x,y} = transformedCursorPosition;
+    console.log("JR NOTE: ",x,y)
+
+    ctx.fillRect(x, y, 5, 5); //this lets me debug where it thinks the pointer is
+    if(isThisPixelRelevant(x,y,virtual_canvas, most_frequent_color)){
+      canvas.style.cursor = "pointer";
+    }else{
+      canvas.style.cursor = "auto";
+    }
+  }
+}
+
+const handleClickEvents = (canvas,virtual_canvas,most_frequent_color)=>{
+
 }
 
 const threshold = function (canvas, threshold) {
