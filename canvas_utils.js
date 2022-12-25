@@ -15,8 +15,28 @@
 const renderImageToCanvas = (img, canvas)=>{
   const context = canvas.getContext("2d");
   context.drawImage(img, 0, 0);
-  edge_detection(canvas);
-  const most_frequent_color = threshold(canvas,100);
+  understandImage(canvas);
+
+}
+
+const makeVirtualCanvas = (canvas, height, width)=>{
+  const virtual_canvas = document.createElement("canvas");
+  virtual_canvas.height = height;
+  virtual_canvas.width = width;
+  return virtual_canvas;
+}
+
+const makeVirtualCopyOfCanvas = (canvas)=>{
+  const virtualcopy = makeVirtualCanvas(canvas, canvas.height, canvas.width);
+  const context = virtualcopy.getContext("2d");
+  context.drawImage(canvas, 0, 0);
+  return virtualcopy;
+}
+
+const understandImage = (canvas)=>{
+  let virtual_canvas =  makeVirtualCopyOfCanvas(canvas);
+  edge_detection(virtual_canvas);
+  const most_frequent_color = threshold(virtual_canvas,100);
   message("Most Frequent color is "+most_frequent_color);
 }
 
