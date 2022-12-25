@@ -22,19 +22,19 @@ body {
 
 .flourescent_lights{
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(246,249,218,1) 3%, rgba(0,212,255,0) 100%);
-  height: 200px;
+  height: 100px;
   width: 100%;
   opacity: 0.4;
   position: fixed;
   top: 0px;
   left: 0px;
-  animation: fade-in  1ms steps(10) infinite;
+  animation: fade-in  1ms steps(100) infinite;
 
 }
 
 @keyframes fade-in {
   0% { opacity: 0.1; }
-  50% { opacity: 0.2; }
+  50% { opacity: 0.15; }
   100% { opacity: 0.1; }
 
 }
