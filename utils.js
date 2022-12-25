@@ -10,6 +10,11 @@ const createElementWithClass = (eleName, className) => {
 
 }
 
+const message = (msg)=>{
+  const ele =document.querySelector("#message");
+  ele.innerHTML =msg;
+}
+
  const titleCase = (input) => {
   const pieces = input.split(" ");
   const ret = [];
