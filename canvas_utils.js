@@ -65,7 +65,7 @@ const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
     var ctx = canvas.getContext('2d');
 
     const rect = canvas.getBoundingClientRect();
-    const transformedCursorPosition = {x: e.offsetX+rect.x/2, y:e.offsetY+rect.y}
+    const transformedCursorPosition = {x: e.clientX-rect.x, y:e.clientY-rect.y}
     const {x,y} = transformedCursorPosition;
     console.log("JR NOTE: ",x,y)
 

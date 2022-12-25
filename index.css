@@ -43,15 +43,7 @@ body {
 
 }
 
-canvas {
-  border:solid 2px;
-  border-bottom-color:#ffe;
-  border-left-color:#eed;
-  border-right-color:#eed;
-  border-top-color:#ccb;
-  max-height:100%;
-  max-width:100%;
-}
+
 
 .frame {
   background-color:#ddc;
@@ -64,11 +56,13 @@ canvas {
   box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
   box-sizing:border-box;
   display:inline-block;
-  margin:10vh 10vw;
+  margin-left: auto;
+  margin-right: auto;
  
-  padding:8vmin;
+  padding:10px;
   position:relative;
   text-align:center;
+  margin-top: 50px;
 }
 
 
