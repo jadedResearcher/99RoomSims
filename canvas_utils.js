@@ -1,6 +1,15 @@
 
  const cross_origin_local_hack = window.location.href.includes("file:/")?"http://farragofiction.com/99RoomsSim/":"";
  
+var room_images = [];
+var hall_images = [];
+
+const fetchAllImages = async ()=>{
+  hall_images =  await getImages("http://farragofiction.com/99RoomsSim/images/Hallways/");
+  room_images = await getImages("http://farragofiction.com/99RoomsSim/images/Rooms/");
+}
+
+
  //async, give it an image source and it'll handle loading it and rendering it to the target canvas
  const kickoffImageRenderingToCanvas = (source,canvas) => {
   var img = new Image();
@@ -77,8 +86,36 @@ const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
   }
 }
 
-const handleClickEvents = (canvas,virtual_canvas,most_frequent_color)=>{
+const newPicture = (canvas)=>{
+  console.log("JR NOTE: need a new image");
+  if(Math.random()<0.75){
+    newHallway(canvas);
+  }else{
+    newRoom(canvas);
+  }
+}
 
+const newHallway = (canvas)=>{
+  kickoffImageRenderingToCanvas(`images/Hallways/${pickFrom(hall_images)}`,canvas);
+}
+
+const newRoom = (canvas)=>{
+  kickoffImageRenderingToCanvas(`images/Rooms/${pickFrom(room_images)}`,canvas);
+}
+
+const handleClickEvents = (canvas,virtual_canvas,most_frequent_color)=>{
+  canvas.onclick = (e)=>{
+    var ctx = canvas.getContext('2d');
+
+    const rect = canvas.getBoundingClientRect();
+    const transformedCursorPosition = {x: e.clientX-rect.x, y:e.clientY-rect.y}
+    const {x,y} = transformedCursorPosition;
+
+    //ctx.fillRect(x, y, 5, 5); //this lets me debug where it thinks the pointer is
+    if(isThisPixelRelevant(x,y,virtual_canvas, most_frequent_color)){
+      newPicture(canvas);
+    }
+  }
 }
 
 const threshold = function (canvas, threshold) {
