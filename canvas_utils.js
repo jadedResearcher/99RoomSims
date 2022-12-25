@@ -39,7 +39,7 @@ const understandImage = (canvas)=>{
   const most_frequent_color = threshold(virtual_canvas,100);
    //threshold(canvas,100);
 
-  message("Most Frequent color is "+most_frequent_color);
+  //message("Most Frequent color is "+most_frequent_color);
   handleClickEvents(canvas,virtual_canvas,most_frequent_color);
   handleMouseMoveEvents(canvas,virtual_canvas,most_frequent_color);
 }
@@ -67,9 +67,8 @@ const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
     const rect = canvas.getBoundingClientRect();
     const transformedCursorPosition = {x: e.clientX-rect.x, y:e.clientY-rect.y}
     const {x,y} = transformedCursorPosition;
-    console.log("JR NOTE: ",x,y)
 
-    ctx.fillRect(x, y, 5, 5); //this lets me debug where it thinks the pointer is
+    //ctx.fillRect(x, y, 5, 5); //this lets me debug where it thinks the pointer is
     if(isThisPixelRelevant(x,y,virtual_canvas, most_frequent_color)){
       canvas.style.cursor = "pointer";
     }else{
