@@ -72,8 +72,8 @@ applyGlitch = (canvas) => {
   const glitch = createElementWithClassAndParent("div", frame);
   glitch.className = "glitch";
   glitch.style.backgroundImage = `url(${canvas.toDataURL()})`;
-  glitch.style.width = getRandomNumberBetween(5+glitchesFound, 50+glitchesFound) + "px";
-  glitch.style.height = getRandomNumberBetween(5+glitchesFound, 50+glitchesFound) + "px";
+  glitch.style.width = getRandomNumberBetween(5+glitchesFound*2, 50+glitchesFound*10) + "px";
+  glitch.style.height = getRandomNumberBetween(5+glitchesFound*2, 50+glitchesFound*10) + "px";
   const normalWidth = parseInt(glitch.style.width);
   const normalHeight = parseInt(glitch.style.height);
   const x = getRandomNumberBetween(0, 768);
@@ -89,6 +89,8 @@ applyGlitch = (canvas) => {
     glitchesFound ++;
     glitchQuip()
     audio.play();
+    glitch.style.animation="";//stop it.
+    glitch.remove();
   }
 
   fuckShitUP("1", glitch)
@@ -99,14 +101,20 @@ const glitchQuip = ()=>{
   const possibilitiesRaw =`Why. Why did you do that?
   Wait. What was that?
   Was that supposed to happen?
+  It's on you if that breaks anything.
+  Could we just maybe stop touching the weird glitches?
   Maybe don't touch anymore of those? Who knows what they are.`
   const possibilities = possibilitiesRaw.split("\n")
-  message(pickFrom(possibilities))
+  const words = `${pickFrom(possibilities)}`;
+  if(glitchesFound>10){
+    words += `${document.querySelectorAll(".glitch").length} remaining. in this area. Why not.`
+  }
+  message(words) 
 }
 
 
 fuckShitUP = (time, ele) => {
-  const mildAmount = getRandomNumberBetween(1, 15+glitchesFound);
+  const mildAmount = getRandomNumberBetween(1, 15+glitchesFound*5);
   const extremeAmount = getRandomNumberBetween(1, 5);
   const normalWidth = parseInt(ele.style.width);
   const normalHeight = parseInt(ele.style.height);
