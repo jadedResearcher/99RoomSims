@@ -114,16 +114,20 @@ const iLied = ()=>{
 }
 
 var back = (canvas)=>{
-  chosen_image = placesBeen.pop();
+  console.log("JR NOTE: before i pop, places are", placesBeen)
+
+   placesBeen.pop();//do it twice to get current image off
+  chosen_image = placesBeen[placesBeen.length-1];
+
   if(!chosen_image){
     iLied();
   }
   dirt.play();
-  console.log("JR NOTE: chosen image is", chosen_image)
-  if(room_images.indexOf(chosen_image) != -1){
-    kickoffImageRenderingToCanvas(`images/Rooms/${chosen_image}`,canvas);
-  }else{
+  //we might guess wrong on room vs hallway, btw. its fine. are you sure you werne't here?
+  if(hall_images.indexOf(chosen_image) != -1){
     kickoffImageRenderingToCanvas(`images/Hallways/${chosen_image}`,canvas);
+  }else{
+    kickoffImageRenderingToCanvas(`images/rooms/${chosen_image}`,canvas);
   }
 }
 
