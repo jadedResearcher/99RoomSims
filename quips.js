@@ -32,6 +32,8 @@ const muzak15 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakM
 const muzak16 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Finish%20(1).mp3")
 
 
+let glitchesFound = 0;
+
 let audioPlaying = [];
 
 
@@ -66,7 +68,6 @@ const intentional_quips = {
 }
 
 applyGlitch = (canvas) => {
-  console.log("JR NOTE: applying glitch")
   const frame = document.querySelector(".frame");
   const glitch = createElementWithClassAndParent("div", frame);
   glitch.className = "glitch";
@@ -85,12 +86,24 @@ applyGlitch = (canvas) => {
   glitch.onclick = () => {
     const audio = pickFrom(glitchAudio);
     audioPlaying.push(audio);
+    glitchesFound ++;
+    glitchQuip()
     audio.play();
   }
 
   fuckShitUP("1", glitch)
 
 }
+
+const glitchQuip = ()=>{
+  const possibilitiesRaw =`Why. Why did you do that?
+  Wait. What was that?
+  Was that supposed to happen?
+  Maybe don't touch anymore of those? Who knows what they are.`
+  const possibilities = possibilitiesRaw.split("\n")
+  message(pickFrom(possibilities))
+}
+
 
 fuckShitUP = (time, ele) => {
   const mildAmount = getRandomNumberBetween(1, 15);

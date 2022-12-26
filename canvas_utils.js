@@ -78,6 +78,13 @@ const makeVirtualCopyOfCanvas = (canvas) => {
   return virtualcopy;
 }
 
+const getStability = ()=>{
+  if(placesBeen.length<10){
+    return 100;
+  }
+  return placesBeen.length <25? 125-(placesBeen.length*5): 0;
+}
+
 const understandImage = (canvas) => {
   let virtual_canvas = makeVirtualCopyOfCanvas(canvas);
   edge_detection(virtual_canvas);
@@ -88,16 +95,18 @@ const understandImage = (canvas) => {
   handleClickEvents(canvas, virtual_canvas, most_frequent_color);
   handleMouseMoveEvents(canvas, virtual_canvas, most_frequent_color);
   clearGlitch();
-  glitchCascade(canvas,0);
+  if(placesBeen.length >10){
+    glitchCascade(canvas,getStability());
+  }
 
 }
 
-//max of about 10
+//can do so many if you want
 const glitchCascade = (canvas,odds)=>{
-  console.log("JR NOTE: glitch cascade",odds)
+  console.log("JR NOTE: odds are",odds/100)
   applyGlitch(canvas);
-  if (Math.random() > odds) {
-    glitchCascade(canvas,odds +.1);
+  if (Math.random() > odds/100) {
+    glitchCascade(canvas,odds +Math.random()*(100/glitchesFound));
   }
 }
 
@@ -117,7 +126,6 @@ const isThisPixelRelevant = (x, y, virtual_canvas, most_frequent_color) => {
 }
 
 const handleMouseMoveEvents = (canvas, virtual_canvas, most_frequent_color) => {
-  console.log("JR NOTE: handling mouse move events")
   canvas.onmousemove = (e) => {
     var ctx = canvas.getContext('2d');
 
@@ -146,19 +154,17 @@ const newPictureButInitial = (canvas)=>{
 }
 
 const newPicture = (canvas, quadrant) => {
-  console.log("JR NOTE: all_images.indexOf(chosen_image)" + all_images.indexOf(chosen_image) +"quadrant"+quadrant )
   const new_seed =  Math.abs(all_images.indexOf(chosen_image)*1000) * quadrant*100 + quadrant;
   rand = new SeededRandom(new_seed);
   updateURLParams("seed=" +rand.initial_seed);
 
   const ods = Math.random();
-  console.log("JR NOTE: odds are", ods)
   if (ods < 0.65) {
     newHallway(canvas);
   } else {
     newRoom(canvas);
   }
-  message(getQuipFor(canvas,chosen_image, currently_room))
+  message(`Stability: ${getStability()}%. ${glitchesFound>0?glitchesFound+".":""} <br>` + getQuipFor(canvas,chosen_image, currently_room))
 
 }
 
@@ -233,7 +239,6 @@ const iLied = () => {
 }
 
 var back = (canvas) => {
-  console.log("JR NOTE: before i pop, places are", placesBeen)
 
   placesBeen.pop();//do it twice to get current image off
   chosen_image = placesBeen[placesBeen.length - 1];
