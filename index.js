@@ -16,6 +16,10 @@ const start = async()=>{
   canvas.onclick = ()=>{
     clickAudio.play();
   }
+  const backButton = document.querySelector("#back");
+  backButton.onclick=()=>{
+    back(canvas);
+  }
 }
 
 window.onclick = () => {

@@ -6,7 +6,15 @@ var hall_images = [];
 var all_images = []; //used for random seeding
 let rand = new SeededRandom(0);
 const doorAudio = new Audio(src = "audio/219486__jarredgibb__door-cupboard-06.mp3");
+const dirt = new Audio(src = "audio/dirt_steps.mp3");
+const water = new Audio(src = "audio/water_steps.mp3");
+const snow = new Audio(src = "audio/snow_steps.mp3");
+const stone = new Audio(src = "audio/stone_steps.mp3");
+
 let chosen_image = "";
+
+const placesBeen = [];
+
 const fetchAllImages = async ()=>{
   hall_images =  await getImages("http://farragofiction.com/99RoomsSim/images/Hallways/");
   room_images = await getImages("http://farragofiction.com/99RoomsSim/images/Rooms/");
@@ -91,23 +99,43 @@ const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
 }
 
 const newPicture = (canvas, quadrant)=>{
-  message("When is a door not a door?"  + quadrant)
+  message("When is a door not a door?")
   console.log("JR NOTE: need a new image", {quadrant: quadrant, chosen_image: chosen_image, index: all_images.indexOf(chosen_image)});
   rand = new SeededRandom(all_images.indexOf(chosen_image)+quadrant);
-  if(rand.nextDouble() < 0.75){
+  if(rand.nextDouble() < 0.65){
     newHallway(canvas);
   }else{
     newRoom(canvas);
   }
 }
 
+const iLied = ()=>{
+  document.body.innerHTML = "I LIED.";
+}
+
+var back = (canvas)=>{
+  chosen_image = placesBeen.pop();
+  if(!chosen_image){
+    iLied();
+  }
+  dirt.play();
+  console.log("JR NOTE: chosen image is", chosen_image)
+  if(room_images.indexOf(chosen_image) != -1){
+    kickoffImageRenderingToCanvas(`images/Rooms/${chosen_image}`,canvas);
+  }else{
+    kickoffImageRenderingToCanvas(`images/Hallways/${chosen_image}`,canvas);
+  }
+}
+
 const newHallway = (canvas)=>{
   chosen_image = rand.pickFrom(hall_images);
+  placesBeen.push(chosen_image);
   kickoffImageRenderingToCanvas(`images/Hallways/${chosen_image}`,canvas);
 }
 
 const newRoom = (canvas)=>{
   chosen_image = rand.pickFrom(room_images);
+  placesBeen.push(chosen_image);
   kickoffImageRenderingToCanvas(`images/Rooms/${chosen_image}`,canvas);
 }
 
