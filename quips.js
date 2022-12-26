@@ -221,7 +221,7 @@ const glitchQuip = ()=>{
   Could we just maybe stop touching the weird glitches?
   Maybe don't touch anymore of those? Who knows what they are.`
   const possibilities = possibilitiesRaw.split("\n")
-  const words = `${pickFrom(possibilities)}`;
+  let words = `${pickFrom(possibilities)}`;
   if(glitchesFound>10){
     words += `${document.querySelectorAll(".glitch").length} remaining. in this area. Why not.`
   }

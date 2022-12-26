@@ -18,6 +18,7 @@ body {
 
 #message{
   margin-top: 10px;
+  max-width: 700px;
 }
 
 .fake-background {
