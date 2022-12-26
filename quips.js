@@ -176,7 +176,6 @@ const intentional_quips_hallway = {
   "00032-img.png": { text: "Does it sound like the walls are about to collapse to you?", audio: ice },
   "00015-img.png":{ text: "It's strange how you never really look closely at common chores like shopping.", audio: shopping2 }
   ,"00015-img.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
-  ,"00016-img.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
   ,"00016-img2.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
 
 }
@@ -223,7 +222,7 @@ const glitchQuip = ()=>{
   const possibilities = possibilitiesRaw.split("\n")
   let words = `${pickFrom(possibilities)}`;
   if(glitchesFound>10){
-    words += `${document.querySelectorAll(".glitch").length} remaining. in this area. Why not.`
+    words += `${document.querySelectorAll(".glitch").length-1} remaining. in this area. Why not.`
   }
   message(words) 
 }
