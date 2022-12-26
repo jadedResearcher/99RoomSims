@@ -153,9 +153,28 @@ const intentional_quips_room = {
 }
 
 const intentional_quips_hallway = {
-  "00019-img2.png": { text: "It's festive!", audio: circus },
+
   "00062-img.png": { text: "Strangely peaceful...", audio: birds },
+  "00063-img.png": { text: "Strangely peaceful...", audio: birds },
+  "00064-img.png": { text: "It almost makes you feel like you're out, doesn't it?", audio: birds },
+  "00065-img.png": { text: "Do you remember what the feel of fresh breeze on your face was like?", audio: birds },
+  "00057-img.png": { text: "It's probably just paint...", audio: heart },
+  "00058-img.png": { text: "It can't be blood. Blood doesn't stay red like that.", audio: heart },
+  "00059-img.png": { text: "What happened here?", audio: heart },
+  ".png": { text: "Strangely peaceful...", audio: birds },
+  ".png": { text: "Strangely peaceful...", audio: birds },
+  ".png": { text: "Strangely peaceful...", audio: birds },
+  ".png": { text: "Strangely peaceful...", audio: birds },
+  ".png": { text: "Strangely peaceful...", audio: birds },
+
   "00060-img.png":  { text: "This would make a great children's hospital...", audio: heart },
+
+
+  "00019-img2.png": { text: "It's festive!", audio: circus },
+  "00100-img.png": { text: "It's festive!", audio: circus },
+
+  "00037-img.png": { text: "Does it sound like the walls are about to collapse to you?", audio: ice },
+
   "00032-img.png": { text: "Does it sound like the walls are about to collapse to you?", audio: ice },
   "00015-img.png":{ text: "It's strange how you never really look closely at common chores like shopping.", audio: shopping2 },
 
