@@ -72,8 +72,8 @@ applyGlitch = (canvas) => {
   const glitch = createElementWithClassAndParent("div", frame);
   glitch.className = "glitch";
   glitch.style.backgroundImage = `url(${canvas.toDataURL()})`;
-  glitch.style.width = getRandomNumberBetween(5, 50) + "px";
-  glitch.style.height = getRandomNumberBetween(5, 50) + "px";
+  glitch.style.width = getRandomNumberBetween(5+glitchesFound, 50+glitchesFound) + "px";
+  glitch.style.height = getRandomNumberBetween(5+glitchesFound, 50+glitchesFound) + "px";
   const normalWidth = parseInt(glitch.style.width);
   const normalHeight = parseInt(glitch.style.height);
   const x = getRandomNumberBetween(0, 768);
@@ -106,7 +106,7 @@ const glitchQuip = ()=>{
 
 
 fuckShitUP = (time, ele) => {
-  const mildAmount = getRandomNumberBetween(1, 15);
+  const mildAmount = getRandomNumberBetween(1, 15+glitchesFound);
   const extremeAmount = getRandomNumberBetween(1, 5);
   const normalWidth = parseInt(ele.style.width);
   const normalHeight = parseInt(ele.style.height);
