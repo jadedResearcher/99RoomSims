@@ -99,7 +99,7 @@ const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
 }
 
 const newPicture = (canvas, quadrant)=>{
-  message("When is a door not a door?")
+  message("When is a door not a door? " + quadrant)
   console.log("JR NOTE: need a new image", {quadrant: quadrant, chosen_image: chosen_image, index: all_images.indexOf(chosen_image)});
   rand = new SeededRandom(all_images.indexOf(chosen_image)+quadrant);
   if(rand.nextDouble() < 0.65){
@@ -153,12 +153,13 @@ const handleClickEvents = (canvas,virtual_canvas,most_frequent_color)=>{
 
       let quadrant = 0;
       //my brain is empty, can't think of a better way to do this
-      if(x > canvas.width/4 *3){
-        quadrant = 3;
-      }else if(x > canvas.width/4 *2){
-        quadrant = 2;
-      }else if(x > canvas.width/4){
-        quadrant = 1;
+      const number_of_segments = 10;
+      const segment_size  = canvas.width/number_of_segments;
+
+      for(let i =1; i<number_of_segments; i++){
+        if(x > segment_size*i){
+          quadrant = i;
+        }
       }
       newPicture(canvas, quadrant);
     }
