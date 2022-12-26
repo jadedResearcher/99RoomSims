@@ -102,7 +102,9 @@ const newPicture = (canvas, quadrant)=>{
   message("When is a door not a door? " + quadrant)
   console.log("JR NOTE: need a new image", {quadrant: quadrant, chosen_image: chosen_image, index: all_images.indexOf(chosen_image)});
   rand = new SeededRandom(all_images.indexOf(chosen_image)+quadrant);
-  if(rand.nextDouble() < 0.65){
+  const ods = Math.random();
+  console.log("JR NOTE: odds are", ods)
+  if(ods< 0.65){
     newHallway(canvas);
   }else{
     newRoom(canvas);
