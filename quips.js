@@ -75,10 +75,12 @@ applyGlitch = (canvas) => {
   glitch.style.height = getRandomNumberBetween(1, 50) + "px";
   const normalWidth = parseInt(glitch.style.width);
   const normalHeight = parseInt(glitch.style.height);
-  glitch.style.backgroundPositionX = getRandomNumberBetween(0, frame.clientWidth) + "px";
-  glitch.style.backgroundPositionY = getRandomNumberBetween(0, frame.clientHeight) + "px";
-  glitch.style.top = getRandomNumberBetween(0, canvas.width) + "px";
-  glitch.style.left = getRandomNumberBetween(0, canvas.height) + "px";
+  const x = getRandomNumberBetween(0, 768);
+  const y = getRandomNumberBetween(0, 512) ;
+  glitch.style.backgroundPositionX = "-"+x + "px";
+  glitch.style.backgroundPositionY = "-"+y + "px";
+  glitch.style.top = y +13+ "px";
+  glitch.style.left = x +13+ "px";
 
   glitch.onclick = () => {
     const audio = pickFrom(glitchAudio);
@@ -140,12 +142,6 @@ clearGlitch = () => {
 }
 
 getQuipFor = (canvas, imageKey, currently_room) => {
-  if (Math.random() > .75) {
-    clearGlitch();
-    applyGlitch(canvas);
-  } else {
-    clearGlitch();
-  }
   if (Math.random() > 0.5) {
     return currently_room ? pickFrom(genericRoomQuips) : pickFrom(genericHallwayQuips);
   }

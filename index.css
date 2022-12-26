@@ -67,12 +67,12 @@ canvas{
 
 #glitch{
   position: absolute;
-  background: red;
   width: 100px;
   height: 100px;
   top: 10px;
   left: 10px;
   cursor: pointer;
+  background-repeat: no-repeat;
 }
 
 
