@@ -10,6 +10,8 @@ const water = new Audio(src = "audio/water_steps.mp3");
 const snow = new Audio(src = "audio/snow_steps.mp3");
 const stone = new Audio(src = "audio/stone_steps.mp3");
 
+const steps = [dirt,dirt,dirt,dirt,dirt,stone,stone,stone,snow,snow,water];
+
 let chosen_image = "";
 
 const placesBeen = [];
@@ -132,8 +134,9 @@ const newPictureButInitial = (canvas)=>{
 
 const newPicture = (canvas, quadrant) => {
   message("When is a door not a door? " + quadrant)
-  console.log("JR NOTE: need a new image", { quadrant: quadrant, chosen_image: chosen_image, index: all_images.indexOf(chosen_image) });
-  rand = new SeededRandom(all_images.indexOf(chosen_image) + quadrant);
+  console.log("JR NOTE: all_images.indexOf(chosen_image)" + all_images.indexOf(chosen_image) +"quadrant"+quadrant )
+  const new_seed =  all_images.indexOf(chosen_image)*1000 * quadrant*100 + quadrant;
+  rand = new SeededRandom(new_seed);
   updateURLParams("seed=" +rand.initial_seed);
 
   const ods = Math.random();
@@ -158,7 +161,7 @@ var back = (canvas) => {
   if (!chosen_image) {
     iLied();
   }
-  dirt.play();
+  pickFrom(steps).play();
   //we might guess wrong on room vs hallway, btw. its fine. are you sure you werne't here?
   if (hall_images.indexOf(chosen_image) != -1) {
     kickoffImageRenderingToCanvas(`images/Hallways/${chosen_image}`, canvas);
