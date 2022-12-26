@@ -32,13 +32,27 @@ const muzak15 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakM
 const muzak16 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Finish%20(1).mp3")
 
 
+const laugh = new Audio("audio/483159__f-r-a-g-i-l-e__children-s-toys-laughing.mp3")
+
+const shopping1 = new Audio("audio/shopping1.mp3")
+const shopping2 = new Audio("audio/shopping2.mp3")
+const shopping3 = new Audio("audio/shopping3.mp3")
+const birds = new Audio("audio/birds.mp3")
+const ice = new Audio("audio/268023__dheming__breaking-ice-01.mp3")
+const bells = new Audio("audio/263886__jarredgibb__jingle-bells.mp3")
+
+const waterSounds = new Audio("audio/398718__inspectorj__water-swirl-small-25.mp3")
+
+//https://freesound.org/people/Dynamicell/sounds/17548/
+const fire = new Audio("audio/17548__dynamicell__fire-forest-inferno.mp3")
+
 let glitchesFound = 0;
 
 let audioPlaying = [];
 
 
 const spookyAudio = [heart, weird_ambient, robot, phone1, phone2, phone3, hospital, circus];
-const glitchAudio = [...spookyAudio, shepard, hospital, dog, home, muzak2, muzak1, muzak3, muzak4, muzak5, muzak6, muzak8, muzak7, muzak9, muzak16, muzak15, muzak14, muzak13, muzak12, muzak11, muzak10]
+const glitchAudio = [...spookyAudio,home,fire,ice,shopping1, shopping2, shopping3, shepard, hospital, dog, home, muzak2, muzak1, muzak3, muzak4, muzak5, muzak6, muzak8, muzak7, muzak9, muzak16, muzak15, muzak14, muzak13, muzak12, muzak11, muzak10]
 
 
 const genericQuipsRaw =
@@ -63,8 +77,88 @@ const genericQuips = genericQuipsRaw.split("\n")
 const genericRoomQuips = genericRoomQuipsRaw.split("\n")
 const genericHallwayQuips = genericHallwayQuipsRaw.split("\n")
 
-const intentional_quips = {
-  "00019-img2.png": { text: "It's festive!", audio: circus }
+const intentional_quips_room = {
+  "00023-img.png": { text: "It's festive!", audio: bells },
+  "00000-img.png": { text: "It's festive!", audio: bells },
+  "00001-img.png": { text: "It's festive!", audio: bells },
+  "00002-img.png": { text: "It's festive!", audio: bells },
+  "00003-img.png": { text: "It's festive!", audio: bells },
+  "00004-img.png": { text: "It's festive!", audio: bells },
+  "00005-img.png": { text: "It's festive!", audio: bells },
+  "00006-img.png": { text: "It's festive!", audio: bells },
+  "00007-img.png": { text: "It's festive!", audio: bells },
+  "00008-img.png": { text: "It's festive!", audio: bells },
+  "00009-img.png": { text: "It's festive!", audio: bells },
+  "00010-img.png": { text: "It's festive!", audio: bells },
+  "00011-img.png": { text: "It's festive!", audio: bells },
+  "00012-img.png": { text: "It's festive!", audio: bells },
+  "00013-img.png": { text: "It's festive!", audio: bells },
+  "00014-img.png": { text: "It's festive!", audio: bells },
+  "00015-img.png": { text: "It's festive!", audio: bells },
+  "00016-img.png": { text: "It's festive!", audio: bells },
+  "00017-img.png": { text: "It's festive!", audio: bells },
+  "00018-img.png": { text: "It's festive!", audio: bells },
+  "00019-img.png": { text: "It's festive!", audio: bells },
+  "00020-img.png": { text: "It's festive!", audio: bells },
+  "00021-img.png": { text: "It's festive!", audio: bells },
+  "00021-img.png": { text: "It's festive!", audio: bells },
+  "00024-img.png": { text: "It's festive!", audio: bells },
+  "00025-img.png": { text: "It's festive!", audio: bells },
+  "00026-img.png": { text: "It's festive!", audio: bells },
+  "00027-img.png": { text: "It's festive!", audio: bells },
+
+  "00029-img_20221225202507.png": { text: "Meat is meat.", audio: shopping1 }
+  ,"00030-img_20221225202507.png": { text: "Flesh.", audio: shopping2 }
+  ,"00031-img_20221225202507.png": { text: "I think...I think the meat has gone off...", audio: shopping2 }
+  ,"00028-img_20221225202507.png": { text: "Are you hungry?", audio: shopping3 }
+  ,"00019-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00020-img_20221225202216.png": { text: "The tang of chemical sweetness...", audio: shopping2 }
+  ,"00021-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00022-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00023-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00024-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00025-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00026-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+
+  ,"00033-img_20221225201448.png": { text: "Nostalgia...", audio: muzak1 }
+  ,"00034-img_20221225201448.png": { text: "At least you can sit and rest.", audio: muzak2 }
+  ,"00035-img_20221225201448.png": { text: "I... wouldn't eat anything here.", audio: muzak3 }
+  ,"00028-img_20221225201448.png": { text: "I... wouldn't eat anything here.", audio: muzak4 }
+  ,"00029-img_20221225201448.png": { text: "I... wouldn't eat anything here.", audio: muzak5 }
+  ,"00030-img_20221225201448.png": { text: "I... wouldn't eat anything here.", audio: muzak6 }
+  ,"00031-img_20221225201448.png": { text: "I... wouldn't eat anything here.", audio: muzak7 }
+  ,"00032-img_20221225201448.png": { text: "I... wouldn't eat anything here.", audio: muzak8 }
+  ,"00008-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak9 }
+  ,"00001-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak10 }
+  ,"00002-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak11 }
+  ,"00003-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak12 }
+  ,"00004-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak13 }
+  ,"00005-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak14 }
+  ,"00006-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak15 }
+  ,"00007-img_20221225201114.png": { text: "I... wouldn't eat anything here.", audio: muzak16 }
+ 
+ 
+ 
+  ,"00008-img_20221225195805.png": { text: "Oh look. Friends.", audio: laugh }
+
+  ,"1664808285878-img.png": { text: "Fire is free.", audio: fire }
+  ,"1664808285879-img.png": { text: "It burns.", audio: fire }
+  ,"1664808285877-img.png": { text: "It's....cold.", audio: waterSounds }
+
+  ,"00019-img2.png": { text: "It's festive!", audio: circus },
+  "00032-img_20221225201448.png": { text: "Do you remember the diners of your childhood?", audio: muzak8 },
+  "1664808285876-img.png": { text: "That smell...Salt and rotting fish... and... something else...", audio: waterSounds },
+  "00024-img_20221225202216.png": { text: "At least it's different...", audio: shopping3 },
+  "00026-img_20221225202216.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+}
+
+const intentional_quips_hallway = {
+  "00019-img2.png": { text: "It's festive!", audio: circus },
+  "00062-img.png": { text: "Strangely peaceful...", audio: birds },
+  "00060-img.png":  { text: "This would make a great children's hospital...", audio: heart },
+  "00032-img.png": { text: "Does it sound like the walls are about to collapse to you?", audio: ice },
+  "00015-img.png":{ text: "It's strange how you never really look closely at common chores like shopping.", audio: shopping2 },
+
 }
 
 applyGlitch = (canvas) => {
@@ -100,8 +194,10 @@ applyGlitch = (canvas) => {
 const glitchQuip = ()=>{
   const possibilitiesRaw =`Why. Why did you do that?
   Wait. What was that?
+  ...
   Was that supposed to happen?
   It's on you if that breaks anything.
+  Look, I'll level with you here. There's not even a POINT to collecting the glitches. They just. Aren't meant to be here.
   Could we just maybe stop touching the weird glitches?
   Maybe don't touch anymore of those? Who knows what they are.`
   const possibilities = possibilitiesRaw.split("\n")
@@ -168,6 +264,20 @@ clearGlitch = () => {
 }
 
 getQuipFor = (canvas, imageKey, currently_room) => {
+  console.log("JR NOTE: image key is", imageKey, "curretly room is",currently_room)
+  if(currently_room && intentional_quips_room[imageKey]){
+    const quip =intentional_quips_room[imageKey];
+    quip.audio && quip.audio.play();
+    quip.audio && audioPlaying.push(quip.audio);
+    return quip.text;
+  }
+
+  if(!currently_room && intentional_quips_hallway[imageKey]){
+    const quip =intentional_quips_hallway[imageKey];
+    quip.audio && quip.audio.play();
+    return quip.text;
+  }
+  console.log("JR NOTE:chosen_image wasn't in ",intentional_quips_room, "or ",intentional_quips_hallway )
   if(Math.random() >.95){
     applyGlitch(canvas);//intentionally this will leave a little section of the previous image instead of the current one.
   }

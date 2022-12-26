@@ -151,6 +151,8 @@ const newPictureButInitial = (canvas)=>{
   } else {
     newRoom(canvas);
   }
+  getQuipFor(canvas,chosen_image, currently_room);
+
 }
 
 const newPicture = (canvas, quadrant) => {
