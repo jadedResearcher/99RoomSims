@@ -156,6 +156,7 @@ const newPictureButInitial = (canvas)=>{
 }
 
 const newPicture = (canvas, quadrant) => {
+  clearNonGlitchMusic();
   const new_seed =  Math.abs(all_images.indexOf(chosen_image)*1000) * quadrant*100 + quadrant;
   rand = new SeededRandom(new_seed);
   updateURLParams("seed=" +rand.initial_seed);

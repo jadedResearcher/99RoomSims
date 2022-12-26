@@ -14,40 +14,41 @@ const robot = new Audio(src = "http://knucklessux.com/JR/AudioLogs/Raw/corruptab
 const hospital = new Audio("audio/answerer.mp3")
 const dog = new Audio(src = "http://knucklessux.com/JR/AudioLogs/Raw/lost_your_dog.mp3");
 const home = new Audio(src = "http://knucklessux.com/JR/AudioLogs/Raw/dont_take_me_home.mp3");
-const muzak1 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2001%20Mall%20Open.mp3")
-const muzak2 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2002%20Sale%20Of%20The%20Seventies.mp3")
-const muzak3 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2003%20Third%20Floor%20Spending%20Spree.mp3")
-const muzak4 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2004%20Food%20Court%20Calling.mp3")
-const muzak5 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2005%20Grocery%20Grabbing.mp3")
-const muzak6 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2006%20The%20Fountain%20Of%20Life.mp3")
-const muzak7 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2007%20Phonebooth%20Call%20To%20Home.mp3")
-const muzak8 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2008%20Restroom%20Retreat.mp3")
-const muzak9 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2009%20Impulse%20Purchase%20(Part%201).mp3")
-const muzak10 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2010%20Cash%20Or%20Cheque.mp3")
-const muzak11 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2011%20Checkout%202%20Now%20Open.mp3")
-const muzak12 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2012%20Impulse%20Purchase%20(Part%202).mp3")
-const muzak13 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2013%20Parking%20Lot%20Lost.mp3")
-const muzak14 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2014%20Mall%20Closed.mp3")
-const muzak15 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/nondescriptive_title_w_Mastering%20(2).mp3")
-const muzak16 = new Audio("http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Finish%20(1).mp3")
+const muzak1 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2001%20Mall%20Open.mp3")
+const muzak2 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2002%20Sale%20Of%20The%20Seventies.mp3")
+const muzak3 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2003%20Third%20Floor%20Spending%20Spree.mp3")
+const muzak4 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2004%20Food%20Court%20Calling.mp3")
+const muzak5 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2005%20Grocery%20Grabbing.mp3")
+const muzak6 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2006%20The%20Fountain%20Of%20Life.mp3")
+const muzak7 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2007%20Phonebooth%20Call%20To%20Home.mp3")
+const muzak8 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2008%20Restroom%20Retreat.mp3")
+const muzak9 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2009%20Impulse%20Purchase%20(Part%201).mp3")
+const muzak10 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2010%20Cash%20Or%20Cheque.mp3")
+const muzak11 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2011%20Checkout%202%20Now%20Open.mp3")
+const muzak12 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2012%20Impulse%20Purchase%20(Part%202).mp3")
+const muzak13 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2013%20Parking%20Lot%20Lost.mp3")
+const muzak14 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Mall%20Music%20Muzak%20-%20Mall%20Of%201974%20-%2014%20Mall%20Closed.mp3")
+const muzak15 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/nondescriptive_title_w_Mastering%20(2).mp3")
+const muzak16 = new Audio(src = "http://farragofiction.com/CodexOfRuin/MallMusicMuzakMallOf1974/Finish%20(1).mp3")
 
 
-const laugh = new Audio("audio/483159__f-r-a-g-i-l-e__children-s-toys-laughing.mp3")
+const laugh = new Audio(src = "audio/483159__f-r-a-g-i-l-e__children-s-toys-laughing.mp3")
 
-const shopping1 = new Audio("audio/shopping1.mp3")
-const shopping2 = new Audio("audio/shopping2.mp3")
-const shopping3 = new Audio("audio/shopping3.mp3")
-const birds = new Audio("audio/birds.mp3")
-const ice = new Audio("audio/268023__dheming__breaking-ice-01.mp3")
-const bells = new Audio("audio/263886__jarredgibb__jingle-bells.mp3")
+const shopping1 = new Audio(src = "audio/shopping1.mp3")
+const shopping2 = new Audio(src = "audio/shopping2.mp3")
+const shopping3 = new Audio(src = "audio/shopping3.mp3")
+const birds = new Audio(src = "audio/birds.mp3")
+const ice = new Audio(src = "audio/268023__dheming__breaking-ice-01.mp3")
+const bells = new Audio(src = "audio/263886__jarredgibb__jingle-bells.mp3")
 
-const waterSounds = new Audio("audio/398718__inspectorj__water-swirl-small-25.mp3")
+const waterSounds = new Audio(src = "audio/398718__inspectorj__water-swirl-small-25.mp3")
 
 //https://freesound.org/people/Dynamicell/sounds/17548/
-const fire = new Audio("audio/17548__dynamicell__fire-forest-inferno.mp3")
+const fire = new Audio(src = "audio/17548__dynamicell__fire-forest-inferno.mp3")
 
 let glitchesFound = 0;
 
+let glitchAudioPlaying = [];
 let audioPlaying = [];
 
 
@@ -176,7 +177,9 @@ const intentional_quips_hallway = {
   "00037-img.png": { text: "Does it sound like the walls are about to collapse to you?", audio: ice },
 
   "00032-img.png": { text: "Does it sound like the walls are about to collapse to you?", audio: ice },
-  "00015-img.png":{ text: "It's strange how you never really look closely at common chores like shopping.", audio: shopping2 },
+  "00015-img.png":{ text: "It's strange how you never really look closely at common chores like shopping.", audio: shopping2 }
+  ,"00015-img.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00016-img.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
 
 }
 
@@ -198,7 +201,7 @@ applyGlitch = (canvas) => {
 
   glitch.onclick = () => {
     const audio = pickFrom(glitchAudio);
-    audioPlaying.push(audio);
+    glitchAudioPlaying.push(audio);
     glitchesFound ++;
     glitchQuip()
     audio.play();
@@ -266,6 +269,16 @@ fuckShitUP = (time, ele) => {
   ele.style.animation = animation;
 }
 
+clearNonGlitchMusic = ()=>{
+  if (audioPlaying) {
+    for(let audio of audioPlaying){
+      audio.pause();
+
+    }
+    audioPlaying = [];
+  }
+}
+
 clearGlitch = () => {
   const glitches = document.querySelectorAll(".glitch");
   if (glitches) {
@@ -273,8 +286,8 @@ clearGlitch = () => {
       glitch.remove();
     }
   }
-  if (audioPlaying) {
-    for(let audio of audioPlaying){
+  if (glitchAudioPlaying) {
+    for(let audio of glitchAudioPlaying){
       audio.pause();
 
     }
@@ -286,6 +299,7 @@ getQuipFor = (canvas, imageKey, currently_room) => {
   console.log("JR NOTE: image key is", imageKey, "curretly room is",currently_room)
   if(currently_room && intentional_quips_room[imageKey]){
     const quip =intentional_quips_room[imageKey];
+    console.log("JR NOTE: quip found is", quip, "audio is", quip?.audio);
     quip.audio && quip.audio.play();
     quip.audio && audioPlaying.push(quip.audio);
     return quip.text;
@@ -294,6 +308,8 @@ getQuipFor = (canvas, imageKey, currently_room) => {
   if(!currently_room && intentional_quips_hallway[imageKey]){
     const quip =intentional_quips_hallway[imageKey];
     quip.audio && quip.audio.play();
+    quip.audio && audioPlaying.push(quip.audio);
+
     return quip.text;
   }
   console.log("JR NOTE:chosen_image wasn't in ",intentional_quips_room, "or ",intentional_quips_hallway )
