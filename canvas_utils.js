@@ -146,7 +146,7 @@ const newPicture = (canvas, quadrant) => {
   } else {
     newRoom(canvas);
   }
-  message(getQuipFor(chosen_image, currently_room))
+  message(getQuipFor(canvas,chosen_image, currently_room))
 
 }
 
