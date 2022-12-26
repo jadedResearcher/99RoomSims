@@ -69,18 +69,18 @@ applyGlitch = (canvas) => {
   console.log("JR NOTE: applying glitch")
   const frame = document.querySelector(".frame");
   const glitch = createElementWithClassAndParent("div", frame);
-  glitch.id = "glitch";
+  glitch.className = "glitch";
   glitch.style.backgroundImage = `url(${canvas.toDataURL()})`;
-  glitch.style.width = getRandomNumberBetween(1, 50) + "px";
-  glitch.style.height = getRandomNumberBetween(1, 50) + "px";
+  glitch.style.width = getRandomNumberBetween(5, 50) + "px";
+  glitch.style.height = getRandomNumberBetween(5, 50) + "px";
   const normalWidth = parseInt(glitch.style.width);
   const normalHeight = parseInt(glitch.style.height);
   const x = getRandomNumberBetween(0, 768);
   const y = getRandomNumberBetween(0, 512) ;
   glitch.style.backgroundPositionX = "-"+x + "px";
   glitch.style.backgroundPositionY = "-"+y + "px";
-  glitch.style.top = y +13+ "px";
-  glitch.style.left = x +13+ "px";
+  glitch.style.top = y +10+ "px";
+  glitch.style.left = x +10+ "px";
 
   glitch.onclick = () => {
     const audio = pickFrom(glitchAudio);
@@ -93,8 +93,8 @@ applyGlitch = (canvas) => {
 }
 
 fuckShitUP = (time, ele) => {
-  const mildAmount = getRandomNumberBetween(0, 5);
-  const extremeAmount = getRandomNumberBetween(0, 5);
+  const mildAmount = getRandomNumberBetween(1, 15);
+  const extremeAmount = getRandomNumberBetween(1, 5);
   const normalWidth = parseInt(ele.style.width);
   const normalHeight = parseInt(ele.style.height);
   const extremeOptions = [`background-position-y: ${getRandomNumberBetween(0, normalHeight)}`,
@@ -102,7 +102,10 @@ fuckShitUP = (time, ele) => {
    `transform: rotate(${Math.random()}turn);`,
    `opacity: ${0.5+Math.random()*2}`, 
    `filter: grayscale(1);`,
-   `filter: sepia(0.2);`
+   `filter: sepia(0.2);`,
+   `filter: blur(${getRandomNumberBetween(1,3)}px);`,
+   `filter: blur(${getRandomNumberBetween(1,3)}px);`,
+
    `filter: brightness(.75);`, `filter: brightness(1.15);`, 
    `filter: hue-rotate(180);`, `width: ${normalWidth + mildAmount}px;`,
     `height: ${normalHeight + mildAmount}px;`, 
@@ -115,8 +118,6 @@ fuckShitUP = (time, ele) => {
   const inadvisable_hacked_css_keyframe = `
  @keyframes ${animation_name} {
   0% { ${pickFrom(options)} }
-  10% { ${pickFrom(options)} }
-  20% { ${pickFrom(options)} }
   50% { ${pickFrom(options)} }
   100% { ${pickFrom(options)} }
 
@@ -130,9 +131,11 @@ fuckShitUP = (time, ele) => {
 }
 
 clearGlitch = () => {
-  const glitch = document.querySelector("#glitch");
-  if (glitch) {
-    glitch.remove();
+  const glitches = document.querySelectorAll(".glitch");
+  if (glitches) {
+    for(let glitch of glitches){
+      glitch.remove();
+    }
   }
   if (audioPlaying) {
     for(let audio of audioPlaying){
@@ -144,6 +147,9 @@ clearGlitch = () => {
 }
 
 getQuipFor = (canvas, imageKey, currently_room) => {
+  if(Math.random() >.95){
+    applyGlitch(canvas);//intentionally this will leave a little section of the previous image instead of the current one.
+  }
   if (Math.random() > 0.5) {
     return currently_room ? pickFrom(genericRoomQuips) : pickFrom(genericHallwayQuips);
   }

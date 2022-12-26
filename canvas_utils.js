@@ -87,11 +87,17 @@ const understandImage = (canvas) => {
   //message("Most Frequent color is "+most_frequent_color);
   handleClickEvents(canvas, virtual_canvas, most_frequent_color);
   handleMouseMoveEvents(canvas, virtual_canvas, most_frequent_color);
-  if (Math.random() > .0005) {
-    clearGlitch();
-    applyGlitch(canvas);
-  } else {
-    clearGlitch();
+  clearGlitch();
+  glitchCascade(canvas,0);
+
+}
+
+//max of about 10
+const glitchCascade = (canvas,odds)=>{
+  console.log("JR NOTE: glitch cascade",odds)
+  applyGlitch(canvas);
+  if (Math.random() > odds) {
+    glitchCascade(canvas,odds +.1);
   }
 }
 
