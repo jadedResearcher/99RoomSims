@@ -3,11 +3,14 @@
  
 var room_images = [];
 var hall_images = [];
+var all_images = []; //used for random seeding
+let rand = new SeededRandom(0);
 const doorAudio = new Audio(src = "audio/219486__jarredgibb__door-cupboard-06.mp3");
-
+let chosen_image = "";
 const fetchAllImages = async ()=>{
   hall_images =  await getImages("http://farragofiction.com/99RoomsSim/images/Hallways/");
   room_images = await getImages("http://farragofiction.com/99RoomsSim/images/Rooms/");
+  all_images = hall_images.concat(room_images);
 }
 
 
@@ -87,10 +90,11 @@ const handleMouseMoveEvents = (canvas,virtual_canvas,most_frequent_color)=>{
   }
 }
 
-const newPicture = (canvas)=>{
-  message("When is a door not a door?")
-  console.log("JR NOTE: need a new image");
-  if(Math.random()<0.75){
+const newPicture = (canvas, quadrant)=>{
+  message("When is a door not a door?"  + quadrant)
+  console.log("JR NOTE: need a new image", {quadrant: quadrant, chosen_image: chosen_image, index: all_images.indexOf(chosen_image)});
+  rand = new SeededRandom(all_images.indexOf(chosen_image)+quadrant);
+  if(rand.nextDouble() < 0.75){
     newHallway(canvas);
   }else{
     newRoom(canvas);
@@ -98,11 +102,13 @@ const newPicture = (canvas)=>{
 }
 
 const newHallway = (canvas)=>{
-  kickoffImageRenderingToCanvas(`images/Hallways/${pickFrom(hall_images)}`,canvas);
+  chosen_image = rand.pickFrom(hall_images);
+  kickoffImageRenderingToCanvas(`images/Hallways/${chosen_image}`,canvas);
 }
 
 const newRoom = (canvas)=>{
-  kickoffImageRenderingToCanvas(`images/Rooms/${pickFrom(room_images)}`,canvas);
+  chosen_image = rand.pickFrom(room_images);
+  kickoffImageRenderingToCanvas(`images/Rooms/${chosen_image}`,canvas);
 }
 
 const handleClickEvents = (canvas,virtual_canvas,most_frequent_color)=>{
@@ -116,7 +122,17 @@ const handleClickEvents = (canvas,virtual_canvas,most_frequent_color)=>{
     //ctx.fillRect(x, y, 5, 5); //this lets me debug where it thinks the pointer is
     if(isThisPixelRelevant(x,y,virtual_canvas, most_frequent_color)){
       doorAudio.play();
-      newPicture(canvas);
+
+      let quadrant = 0;
+      //my brain is empty, can't think of a better way to do this
+      if(x > canvas.width/4 *3){
+        quadrant = 3;
+      }else if(x > canvas.width/4 *2){
+        quadrant = 2;
+      }else if(x > canvas.width/4){
+        quadrant = 1;
+      }
+      newPicture(canvas, quadrant);
     }
   }
 }
