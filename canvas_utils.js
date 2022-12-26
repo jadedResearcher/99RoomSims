@@ -146,7 +146,7 @@ const handleMouseMoveEvents = (canvas, virtual_canvas, most_frequent_color) => {
 const newPictureButInitial = (canvas)=>{
 
   const ods = Math.random();//true random because otherwise it tends to cluster
-  if (ods < 0.65) {
+  if (ods < 0.95) {
     newHallway(canvas);
   } else {
     newRoom(canvas);
@@ -161,7 +161,7 @@ const newPicture = (canvas, quadrant) => {
   updateURLParams("seed=" +rand.initial_seed);
 
   const ods = Math.random();
-  if (ods < 0.65) {
+  if (ods < 0.55) {
     newHallway(canvas);
   } else {
     newRoom(canvas);
