@@ -249,7 +249,7 @@ const glitchQuip = ()=>{
   if(glitchesFound>10){
     const remaining = document.querySelectorAll(".glitch").length-1;
     if(remaining === 0){
-      words += " :\  I was NOT giving that to you as a CHALLENGE. Why on earth would you try to collect all the WORLD DESTROYING GLITCHES? Do you think this is pokemon or something? This is terrible. A disaster. What is WRONG with the people who end up inside this maze? Fine. Go off. Play in your apocalypse. See if I care. I won't even give you a GOOD link to go to next. It probably will be ROTTEN by the time you find it. Serves you right: <a href ='http://farragofiction.com/LitRPGSimE/?apocalypse=night'>Enjoy Your Apocalypse</a>";
+      words += " :\  I was NOT giving that to you as a CHALLENGE. Why on earth would you try to collect all the WORLD DESTROYING GLITCHES? Do you think this is pokemon or something? This is terrible. A disaster. What is WRONG with the people who end up inside this maze? Fine. Go off. Play in your apocalypse. See if I care. I won't even give you a GOOD link to go to next. It probably will be ROTTEN by the time you find it. Serves you right: <a target='_blank' href ='http://farragofiction.com/LitRPGSimE/?apocalypse=night'>Enjoy Your Apocalypse</a>";
     }
     words += ` ${remaining} remaining. in this area. Why not.`
   }
