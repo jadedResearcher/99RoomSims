@@ -101,6 +101,8 @@ fuckShitUP = (time, ele) => {
    `background-position-x: ${getRandomNumberBetween(0, normalWidth)}`, 
    `transform: rotate(${Math.random()}turn);`,
    `opacity: ${0.5+Math.random()*2}`, 
+   `filter: grayscale(1);`,
+   `filter: sepia(0.2);`
    `filter: brightness(.75);`, `filter: brightness(1.15);`, 
    `filter: hue-rotate(180);`, `width: ${normalWidth + mildAmount}px;`,
     `height: ${normalHeight + mildAmount}px;`, 
