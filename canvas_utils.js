@@ -133,9 +133,9 @@ const newPictureButInitial = (canvas)=>{
 }
 
 const newPicture = (canvas, quadrant) => {
-  message("When is a door not a door? " + quadrant)
+  message(getQuipFor(chosen_image))
   console.log("JR NOTE: all_images.indexOf(chosen_image)" + all_images.indexOf(chosen_image) +"quadrant"+quadrant )
-  const new_seed =  all_images.indexOf(chosen_image)*1000 * quadrant*100 + quadrant;
+  const new_seed =  Math.abs(all_images.indexOf(chosen_image)*1000) * quadrant*100 + quadrant;
   rand = new SeededRandom(new_seed);
   updateURLParams("seed=" +rand.initial_seed);
 
