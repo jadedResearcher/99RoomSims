@@ -69,11 +69,28 @@ What was that?`
 
 const genericHallwayQuipsRaw =
   `How far do you think these hallways go?
+  Do you have  reason you keep walking down these halls?
+  Isn't this distracting you from something important?
+  Have you drunk any water, lately?
+  How long have you been doing this?
+  What time is it?
+  Where are you?
+  Is this really the most important thing you could be doing?
+  Zampanio is a really fun game. You are playing it.
+  Do you seek your Identity in these endless halls? Would it make you feel better if I gave you one?
+  What catharsis do you seek from observing these Halls?
 Ever forward, that's how you make progress. Right?`
 
 const genericRoomQuipsRaw =
   `Have you been in this room before?
 Was this always a room?
+What lead you here?
+Are you finding what you seek?
+Are you entertained?
+What emotion are you feeling?
+Sometimes I wonder what sort of people might find their way here...
+What are you feeling when you see this, I wonder?
+Do you understand what you are seeing?
 Wasn't...wasn't this a hallway before?`
 
 const genericQuips = genericQuipsRaw.split("\n")
@@ -230,7 +247,11 @@ const glitchQuip = ()=>{
   const possibilities = possibilitiesRaw.split("\n")
   let words = `${pickFrom(possibilities)}`;
   if(glitchesFound>10){
-    words += `${document.querySelectorAll(".glitch").length-1} remaining. in this area. Why not.`
+    const remaining = document.querySelectorAll(".glitch").length-1;
+    if(remaining === 0){
+      words += " :\  I was NOT giving that to you as a CHALLENGE. Why on earth would you try to collect all the WORLD DESTROYING GLITCHES? Do you think this is pokemon or something? This is terrible. A disaster. What is WRONG with the people who end up inside this maze? Fine. Go off. Play in your apocalypse. See if I care. I won't even give you a GOOD link to go to next. It probably will be ROTTEN by the time you find it. Serves you right: <a href ='http://farragofiction.com/LitRPGSimE/?apocalypse=night'>Enjoy Your Apocalypse</a>";
+    }
+    words += ` ${remaining} remaining. in this area. Why not.`
   }
   message(words) 
 }
