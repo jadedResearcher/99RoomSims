@@ -38,6 +38,8 @@ const shopping1 = new Audio(src = "audio/shopping1.mp3")
 const shopping2 = new Audio(src = "audio/shopping2.mp3")
 const shopping3 = new Audio(src = "audio/shopping3.mp3")
 const birds = new Audio(src = "audio/birds.mp3")
+const birds2 = new Audio(src = "audio/463903__burghrecords__birds-in-spring-scotland.mp3")
+
 const ice = new Audio(src = "audio/268023__dheming__breaking-ice-01.mp3")
 const bells = new Audio(src = "audio/263886__jarredgibb__jingle-bells.mp3")
 
@@ -53,7 +55,7 @@ let audioPlaying = [];
 
 
 const spookyAudio = [heart, weird_ambient, robot, phone1, phone2, phone3, hospital, circus];
-const glitchAudio = [...spookyAudio,home,fire,ice,shopping1, shopping2, shopping3, shepard, hospital, dog, home, muzak2, muzak1, muzak3, muzak4, muzak5, muzak6, muzak8, muzak7, muzak9, muzak16, muzak15, muzak14, muzak13, muzak12, muzak11, muzak10]
+const glitchAudio = [...spookyAudio,birds,birds2,laugh, home,fire,ice,shopping1, shopping2, shopping3, shepard, hospital, dog, home, muzak2, muzak1, muzak3, muzak4, muzak5, muzak6, muzak8, muzak7, muzak9, muzak16, muzak15, muzak14, muzak13, muzak12, muzak11, muzak10]
 
 
 const genericQuipsRaw =
@@ -162,11 +164,6 @@ const intentional_quips_hallway = {
   "00057-img.png": { text: "It's probably just paint...", audio: heart },
   "00058-img.png": { text: "It can't be blood. Blood doesn't stay red like that.", audio: heart },
   "00059-img.png": { text: "What happened here?", audio: heart },
-  ".png": { text: "Strangely peaceful...", audio: birds },
-  ".png": { text: "Strangely peaceful...", audio: birds },
-  ".png": { text: "Strangely peaceful...", audio: birds },
-  ".png": { text: "Strangely peaceful...", audio: birds },
-  ".png": { text: "Strangely peaceful...", audio: birds },
 
   "00060-img.png":  { text: "This would make a great children's hospital...", audio: heart },
 
@@ -180,6 +177,7 @@ const intentional_quips_hallway = {
   "00015-img.png":{ text: "It's strange how you never really look closely at common chores like shopping.", audio: shopping2 }
   ,"00015-img.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
   ,"00016-img.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
+  ,"00016-img2.png": { text: "I... wouldn't eat anything here.", audio: shopping1 }
 
 }
 
@@ -291,7 +289,7 @@ clearGlitch = () => {
       audio.pause();
 
     }
-    audioPlaying = [];
+    glitchAudioPlaying = [];
   }
 }
 
