@@ -214,6 +214,14 @@ const glitchQuip = ()=>{
   const possibilitiesRaw =`Why. Why did you do that?
   Wait. What was that?
   ...
+  Look. Stop doing that.
+  Do you think this is the POINT or something. NO. There is no point. Stop doing that.
+  What are you even hoping to achieve here?
+  What catharsis is worth the Ruin you are bringing here?
+  STOP.
+  I. Don't think it's supposed to be doing that.
+  Are you sure your computer can handle all this?
+  Look. I'll tell you anything you want to know. Just. Go back.  Please?
   Was that supposed to happen?
   It's on you if that breaks anything.
   Look, I'll level with you here. There's not even a POINT to collecting the glitches. They just. Aren't meant to be here.

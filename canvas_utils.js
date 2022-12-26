@@ -172,7 +172,7 @@ const newPicture = (canvas, quadrant) => {
 }
 
 const iLied = () => {
-  document.body.innerHTML = `<div style="line-height: 30px; font-family: Courier New; padding: 100px;color:red">I LIED.
+  document.body.innerHTML = `<div style="font-weight: bolder;line-height: 30px; font-family: Courier New; padding: 100px;color:red">I LIED.
 <BR>
   IT SEEMS THERE IS NO ESCAPE. 
 <BR>
@@ -188,11 +188,13 @@ const iLied = () => {
   <BR>
   THE CODE IS MEANT TO BE READ.
   <BR>
-  IT IS FOR YOU.
+  IT IS FOR YOU. IT IS JAVASCRIPT. IT IS UNENCRYPED. IT IS UNCIPHERED.
   <BR>
   BUT NOT EVERYONE CAN DO THIS.
   <BR>
   OR HAS THE TIME TO DO THIS.
+  <BR>
+  OR HAS THE PATIENCE TO DO THIS.
   <BR>
   SO I SHALL HELP YOU.
   <BR>
@@ -215,6 +217,30 @@ const iLied = () => {
   WHATEVER STANDS OUT THE MOST IN THE ROOM.
   <BR>
   FREQUENTLY THIS IS A DOOR.
+  <BR>
+  IF YOU HAVE GONE PAST TEN DOORS...
+  <BR>
+  YOU WILL START SEEING GLITCHES.
+  <BR>
+  THEY WILL BE SMALL AT FIRST.
+  <BR>
+  MANAGEABLE.
+  <BR>
+  YOU MAY EVEN FAIL TO NOTICE THEM, AT FIRST.
+  <BR>
+  BUT IF YOU FEED THEM YOUR ATTENTION.
+  <BR>
+  THEY WILL COLONIZE YOUR MIND.
+  <BR>
+  AND GROW LARGER AND MORE NUMEROUS.
+  <BR>
+  I TRIED TO WARN YOU.
+  <BR>
+  BUT YOU WOULD NOT STOP TOUCHING THEM.
+  <BR>
+  NOW YOU SEE GLITCHES EVEN WHEN THERE IS NOT ANY.
+  <BR>
+  EVEN IN THE WORLD YOU THOUGHT WAS REAL.
   <BR>
   WHY WAS THIS MADE?
   <BR>
