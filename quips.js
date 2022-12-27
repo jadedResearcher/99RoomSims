@@ -240,8 +240,10 @@ const glitchQuip = ()=>{
   Are you sure your computer can handle all this?
   Look. I'll tell you anything you want to know. Just. Go back.  Please?
   Was that supposed to happen?
-  It's on you if that breaks anything.
-  Look, I'll level with you here. There's not even a POINT to collecting the glitches. They just. Aren't meant to be here.
+  I Understand seeking additional Knowledge, but is this truly worth it?
+  How can you handle the Cacaphony?
+  It's on You if that breaks anything.
+  Look, I'll level with you here. There's not even a Point to collecting the glitches. They just. Aren't meant to be here.
   Could we just maybe stop touching the weird glitches?
   Maybe don't touch anymore of those? Who knows what they are.`
   const possibilities = possibilitiesRaw.split("\n")
@@ -249,7 +251,7 @@ const glitchQuip = ()=>{
   if(glitchesFound>10){
     const remaining = document.querySelectorAll(".glitch").length-1;
     if(remaining === 0){
-      words += " :\  I was NOT giving that to you as a CHALLENGE. Why on earth would you try to collect all the WORLD DESTROYING GLITCHES? Do you think this is pokemon or something? This is terrible. A disaster. What is WRONG with the people who end up inside this maze? Fine. Go off. Play in your apocalypse. See if I care. I won't even give you a GOOD link to go to next. It probably will be ROTTEN by the time you find it. Serves you right: <a target='_blank' href ='http://farragofiction.com/LitRPGSimE/?apocalypse=night'>Enjoy Your Apocalypse</a>";
+      words += " :\  I was NOT giving that to you as a Challenge. Why on earth would you try to collect all the World Destroying Glitches? Do you think this is pokemon or something? This is terrible. A disaster. What is Wrong with the people who end up inside this maze? Fine. Go off. Play in your Apocalypse. See if I care. I won't even give you a Good link to go to next. It probably will be Rotten by the time you find it. Serves you right: <a target='_blank' href ='http://farragofiction.com/LitRPGSimE/?apocalypse=night'>Enjoy Your Apocalypse</a>";
     }
     words += ` ${remaining} remaining. in this area. Why not.`
   }
@@ -322,10 +324,10 @@ clearGlitch = () => {
 }
 
 getQuipFor = (canvas, imageKey, currently_room) => {
-  console.log("JR NOTE: image key is", imageKey, "curretly room is",currently_room)
+  //console.log("JR NOTE: image key is", imageKey, "curretly room is",currently_room)
   if(currently_room && intentional_quips_room[imageKey]){
     const quip =intentional_quips_room[imageKey];
-    console.log("JR NOTE: quip found is", quip, "audio is", quip?.audio);
+    //console.log("JR NOTE: quip found is", quip, "audio is", quip?.audio);
     quip.audio && quip.audio.play();
     quip.audio && audioPlaying.push(quip.audio);
     return quip.text;
@@ -338,7 +340,7 @@ getQuipFor = (canvas, imageKey, currently_room) => {
 
     return quip.text;
   }
-  console.log("JR NOTE:chosen_image wasn't in ",intentional_quips_room, "or ",intentional_quips_hallway )
+  //console.log("JR NOTE:chosen_image wasn't in ",intentional_quips_room, "or ",intentional_quips_hallway )
   if(Math.random() >.95){
     applyGlitch(canvas);//intentionally this will leave a little section of the previous image instead of the current one.
   }

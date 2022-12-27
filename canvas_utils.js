@@ -103,7 +103,7 @@ const understandImage = (canvas) => {
 
 //can do so many if you want
 const glitchCascade = (canvas,odds)=>{
-  console.log("JR NOTE: odds are",odds/100)
+ // console.log("JR NOTE: odds are",odds/100)
   applyGlitch(canvas);
   if (Math.random() > odds/100) {
     glitchCascade(canvas,odds +Math.random()*(100/glitchesFound));
