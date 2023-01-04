@@ -167,7 +167,15 @@ const newPicture = (canvas, quadrant) => {
   } else {
     newRoom(canvas);
   }
-  message(`Stability: ${getStability()}%. ${glitchesFound>0?glitchesFound+".":""} <br>` + getQuipFor(canvas,chosen_image, currently_room))
+
+  let metaQuips = [];
+  metaQuips = metaQuips.concat(getReferrerDetailsQuips());
+  metaQuips = metaQuips.concat(getReferrerQuips());
+  let tmp = rand.pickFrom(metaQuips);
+  let chosen_meta = tmp? "<br><Br>"+ tmp+"<br><Br>": "";
+
+
+  message(`Stability: ${getStability()}%. ${glitchesFound>0?glitchesFound+".":""} <br><br>` + getQuipFor(canvas,chosen_image, currently_room) + chosen_meta)
 
 }
 
