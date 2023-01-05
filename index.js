@@ -27,7 +27,7 @@ window.onload = () => {
   let tmp_ref = urlParams.get('referer');
   let tmp_d = urlParams.get('details');
 
-  let tmp_ref_details = urlParams.get('referer_details').replaceAll('"','');
+  let tmp_ref_details = urlParams.get('referer_details') &&urlParams.get('referer_details').replaceAll('"','');
   if (tmp_ref) {
     referer = tmp_ref;
   }
