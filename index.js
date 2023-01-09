@@ -30,7 +30,7 @@ window.onload = () => {
   let tmp_tip = urlParams.get('tip');
 
   if(tmp_tip){
-    tip = tmp_tip;
+    tip = parseFloat(tmp_tip).toFixed(2);
   }
   let tmp_ref_details = urlParams.get('referer_details') &&urlParams.get('referer_details').replaceAll('"','');
   if (tmp_ref) {
