@@ -123,6 +123,7 @@ const start = async () => {
   //00018-img is open doors, 19 is closed
   const canvas = document.querySelector("#canas_viewport");
   startMaze(canvas);
+
   canvas.onclick = () => {
     clickAudio.play();
   }
