@@ -1,5 +1,13 @@
 let ele;
 
+ const valueAsArray = (key)=>{
+  if(localStorage[key]){
+    return JSON.parse(localStorage[key]);
+  }else{
+    return initEmptyArrayAtKey(key);
+  }
+}
+
 const createElementWithClass = (eleName, className) => {
   const ele = document.createElement(eleName);
 
@@ -19,6 +27,7 @@ const imageExtendsions = [
 const filePattern = new RegExp('<a href="([^?]*?)">','g');
 
 const extensionPattern = new RegExp(`\\\.(${imageExtendsions.join("|")})\$`);
+
 
 
  const getImages = async(url)=>{
