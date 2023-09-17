@@ -8,6 +8,12 @@ let ele;
   }
 }
 
+const initEmptyArrayAtKey =(key)=>{
+  const tmp = [];
+  localStorage[key] = JSON.stringify(tmp);
+  return tmp;
+}
+
 const createElementWithClass = (eleName, className) => {
   const ele = document.createElement(eleName);
 
