@@ -281,7 +281,7 @@ fuckShitUP = (time, ele) => {
     `filter: grayscale(1);`,
     `filter: sepia(0.2);`,
     `z-index:100`,
-    `z-index:-100`
+    `z-index:-100`,
   `filter: blur(${getRandomNumberBetween(1, 3)}px);`,
   `filter: blur(${getRandomNumberBetween(1, 3)}px);`,
 
