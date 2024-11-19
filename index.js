@@ -74,7 +74,6 @@ const getReferrerDetailsQuips = () => {
   if (!details) {
     return [];
   }
-
   const item_name = details.item_name;
   const price = details.price;
   const feeUnder = details.feeUnder;
@@ -91,6 +90,8 @@ const getReferrerDetailsQuips = () => {
 
     , `Maybe next time you can just pay the $${feeUnder} and avoid all this.`
   ]
+
+  tmp.push("Now you gotta dash through all these doors.")
   if (tip == 0) {
     tmp.push("Maybe you should have tipped?");
     tmp.push("Man, bet that driver didn't like how you didn't tip.");

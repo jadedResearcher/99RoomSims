@@ -58,7 +58,8 @@ const kickoffImageRenderingToCanvas = (source, canvas) => {
 
 //given an already loaded image, render it to the target canvas.
 const renderImageToCanvas = (img, canvas) => {
-  const context = canvas.getContext("2d");
+  //note to future jr, if you're going to read frequently you need to tell it the FIRST tim eyou get context from canvas or it ignores it because its cached
+  const context = canvas.getContext("2d",{ willReadFrequently: true });
   context.drawImage(img, 0, 0);
   understandImage(canvas);
 
@@ -73,7 +74,7 @@ const makeVirtualCanvas = (canvas, height, width) => {
 
 const makeVirtualCopyOfCanvas = (canvas) => {
   const virtualcopy = makeVirtualCanvas(canvas, canvas.height, canvas.width);
-  const context = virtualcopy.getContext("2d");
+  const context = virtualcopy.getContext("2d",{ willReadFrequently: true });
   context.drawImage(canvas, 0, 0);
   return virtualcopy;
 }
@@ -113,7 +114,7 @@ const glitchCascade = (canvas,odds)=>{
 
 
 const isThisPixelRelevant = (x, y, virtual_canvas, most_frequent_color) => {
-  var ctx = virtual_canvas.getContext('2d');
+  var ctx = virtual_canvas.getContext('2d',{ willReadFrequently: true });
 
   var data = ctx.getImageData(x, y, 1, 1);
 
@@ -127,7 +128,7 @@ const isThisPixelRelevant = (x, y, virtual_canvas, most_frequent_color) => {
 
 const handleMouseMoveEvents = (canvas, virtual_canvas, most_frequent_color) => {
   canvas.onmousemove = (e) => {
-    var ctx = canvas.getContext('2d');
+    var ctx = canvas.getContext('2d',{ willReadFrequently: true });
 
     const rect = canvas.getBoundingClientRect();
     const transformedCursorPosition = { x: e.clientX - rect.x, y: e.clientY - rect.y }
@@ -262,7 +263,7 @@ const iLied = () => {
   <BR>
   BY SOMEONE OTHER THAN JR.
   <BR>
-  A CLUE MAY EXIST AS TO THE IDENTIY.
+  A CLUE MAY EXIST AS TO THE IDENTITY.
   <BR>
   TAKE THAT AS YOU WILL.
   <BR>
@@ -308,7 +309,7 @@ const newRoom = (canvas) => {
 
 const handleClickEvents = (canvas, virtual_canvas, most_frequent_color) => {
   canvas.onclick = (e) => {
-    var ctx = canvas.getContext('2d');
+    var ctx = canvas.getContext('2d',{ willReadFrequently: true });
 
     const rect = canvas.getBoundingClientRect();
     const transformedCursorPosition = { x: e.clientX - rect.x, y: e.clientY - rect.y }
